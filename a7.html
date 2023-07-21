@@ -9,7 +9,7 @@
 
   <button id="b3" onclick="addRow()">Add Row</button>
 
-  <div id="tableContainer"></div>
+  <!--<div id="tableContainer"></div>-->
 
   <script language="javascript">
     // Function to generate the initial table based on user input
@@ -28,23 +28,18 @@
       }
 
       tableHtml += "</table>";
-      document.getElementById("tableContainer").innerHTML = tableHtml;
 
-      // Hide the input fields and "Generate Table" button after generating the table
-     /* document.getElementById("t1").style.display = "none";
-      document.getElementById("t2").style.display = "none";
-      document.getElementById("b1").style.display = "none"; */
-      
+      // Create a new div element and append it to the body
+      var newDiv = document.createElement("div");
+      newDiv.setAttribute("id", "tableContainer");
+      newDiv.innerHTML = tableHtml;
+      document.body.appendChild(newDiv);
+
+      // Remove everything from the screen except the “Add Column” and “Add Row” buttons and the generated table
       document.body.removeChild(document.getElementsByTagName("font")[0]);
-	    document.body.removeChild(document.getElementsByTagName("br")[0]);
-	    document.body.removeChild(document.getElementsByTagName("br")[0]);
-	    document.body.removeChild(document.getElementsByTagName("input")[0]);
-	    document.body.removeChild(document.getElementsByTagName("br")[0]);
-	    document.body.removeChild(document.getElementsByTagName("br")[0]);
-	    document.body.removeChild(document.getElementsByTagName("input")[0]);
-	    document.body.removeChild(document.getElementsByTagName("br")[0]);
-	    document.body.removeChild(document.getElementsByTagName("br")[0]);
-	    document.body.removeChild(document.getElementsByTagName("button")[0]);	
+      document.body.removeChild(document.getElementsByTagName("input")[0]);
+      document.body.removeChild(document.getElementsByTagName("input")[0]);
+      document.body.removeChild(document.getElementsByTagName("button")[0]);
     }
 
     // Function to add a new column to the table
@@ -54,7 +49,8 @@
 
       for (var i = 0; i < numRows; i++) {
         var newRowCell = table.rows[i].insertCell(-1);
-        newRowCell.innerHTML = "Row " + (i + 1) + ", Column " + (table.rows[i].cells.length);
+        newRowCell.innerHTML =
+          "Row " + (i + 1) + ", Column " + table.rows[i].cells.length;
       }
     }
 
@@ -66,7 +62,8 @@
 
       for (var i = 0; i < numCols; i++) {
         var newRowCell = newRow.insertCell(-1);
-        newRowCell.innerHTML = "Row " + (table.rows.length) + ", Column " + (i + 1);
+        newRowCell.innerHTML =
+          "Row " + table.rows.length + ", Column " + (i + 1);
       }
     }
   </script>
