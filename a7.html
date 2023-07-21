@@ -31,9 +31,20 @@
       document.getElementById("tableContainer").innerHTML = tableHtml;
 
       // Hide the input fields and "Generate Table" button after generating the table
-      document.getElementById("t1").style.display = "none";
+     /* document.getElementById("t1").style.display = "none";
       document.getElementById("t2").style.display = "none";
-      document.getElementById("b1").style.display = "none";
+      document.getElementById("b1").style.display = "none"; */
+      
+      document.body.removeChild(document.getElementsByTagName("font")[0]);
+	    document.body.removeChild(document.getElementsByTagName("br")[0]);
+	    document.body.removeChild(document.getElementsByTagName("br")[0]);
+	    document.body.removeChild(document.getElementsByTagName("input")[0]);
+	    document.body.removeChild(document.getElementsByTagName("br")[0]);
+	    document.body.removeChild(document.getElementsByTagName("br")[0]);
+	    document.body.removeChild(document.getElementsByTagName("input")[0]);
+	    document.body.removeChild(document.getElementsByTagName("br")[0]);
+	    document.body.removeChild(document.getElementsByTagName("br")[0]);
+	    document.body.removeChild(document.getElementsByTagName("button")[0]);	
     }
 
     // Function to add a new column to the table
