@@ -14,14 +14,14 @@
   <script language="javascript">
     // Function to generate the initial table based on user input
     function generateTable() {
-      var numRows = parseInt(document.getElementById("t1").value);
-      var numCols = parseInt(document.getElementById("t2").value);
+      let numRows = parseInt(document.getElementById("t1").value);
+      let numCols = parseInt(document.getElementById("t2").value);
 
-      var tableHtml = "<table border='1'>";
+      let tableHtml = "<table border='1'>";
 
-      for (var i = 0; i < numRows; i++) {
+      for (let i = 0; i < numRows; i++) {
         tableHtml += "<tr>";
-        for (var j = 0; j < numCols; j++) {
+        for (let j = 0; j < numCols; j++) {
           tableHtml += "<td>Row " + (i + 1) + ", Column " + (j + 1) + "</td>";
         }
         tableHtml += "</tr>";
@@ -30,7 +30,7 @@
       tableHtml += "</table>";
 
       // Create a new div element and append it to the body
-      var newDiv = document.createElement("div");
+      let newDiv = document.createElement("div");
       newDiv.setAttribute("id", "tableContainer");
       newDiv.innerHTML = tableHtml;
       document.body.appendChild(newDiv);
@@ -44,11 +44,11 @@
 
     // Function to add a new column to the table
     function addColumn() {
-      var table = document.querySelector("table");
-      var numRows = table.rows.length;
+      let table = document.querySelector("table");
+      let numRows = table.rows.length;
 
-      for (var i = 0; i < numRows; i++) {
-        var newRowCell = table.rows[i].insertCell(-1);
+      for (let i = 0; i < numRows; i++) {
+        let newRowCell = table.rows[i].insertCell(-1);
         newRowCell.innerHTML =
           "Row " + (i + 1) + ", Column " + table.rows[i].cells.length;
       }
@@ -56,12 +56,12 @@
 
     // Function to add a new row to the table
     function addRow() {
-      var table = document.querySelector("table");
-      var numCols = table.rows[0].cells.length;
-      var newRow = table.insertRow(-1);
+      let table = document.querySelector("table");
+      let numCols = table.rows[0].cells.length;
+      let newRow = table.insertRow(-1);
 
-      for (var i = 0; i < numCols; i++) {
-        var newRowCell = newRow.insertCell(-1);
+      for (let i = 0; i < numCols; i++) {
+        let newRowCell = newRow.insertCell(-1);
         newRowCell.innerHTML =
           "Row " + table.rows.length + ", Column " + (i + 1);
       }
